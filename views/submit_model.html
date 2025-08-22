@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model Submission</title>
+    <link rel="stylesheet" href="/public/styles3.css" />
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+
+    <div class="background"></div>
+
+    <div class="container">
+      <h1>Submit Model Data</h1>
+      <form id="submitForm">
+        <label for="csvFile">Upload CSV File:</label>
+        <input type="file" id="csvFile" accept=".csv" required />
+
+        <label for="targetColumn"
+          >Target Column(should be same as dataset):</label
+        >
+        <input
+          type="text"
+          id="targetColumn"
+          placeholder="Enter target column"
+          required
+        />
+
+        <label for="sensitiveColumn"
+          >Sensitive Column (should be same as dataset):</label
+        >
+        <input
+          type="text"
+          id="sensitiveColumn"
+          placeholder="Enter sensitive column"
+          required
+        />
+
+        <label for="modelName">Select Model:</label>
+        <select id="modelName" required>
+          <option value="LogisticRegression">Logistic Regression</option>
+          <option value="RandomForest">Random Forest</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div id="output"></div>
+    </div>
+
+    <script src="/public/script3.js"></script>
+  </body>
+</html>

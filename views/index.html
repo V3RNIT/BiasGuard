@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"><span>B</span>iasGuard</a>
+      <nav class="navbar">
+        <a href="#about">home</a>
+        <a href="#price">price</a>
+        <a href="#about">about</a>
+        <a href="#footer">contact</a>
+        <a href="/views/submit_model.html">submit</a>
+      </nav>
+
+    <div id="menu-bars" class="fas fa-bar"></div>
+
+    </header>
+
+    <!--Header section ends-->
+    <section class="about" id="about">
+
+      <h1 class="heading"><span>About</span> Us</h1>
+      <div class="top1">
+        <div class="top2">
+          <h3>We insure there is no biasness in your model</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--Hero section starts-->
+
+  
+    <!--Hero section ends-->
+
+    <!--trial bento -->
+
+    <!--
+      <h1 class="visually-hidden">Auto-placement Bento Grid</h1>
+
+    <section class="bento" aria-label="Bento grid auto-placement">
+      <article class="tile span-2">
+        <img src= "/public/images/gptBias.png" alt="Scenic" />
+        <h2>Featured</h2>
+        <p>This tile is a bit bigger.</p>
+      </article>
+
+      <article class="tile">
+        <h3>Quick Note</h3>
+        <p>Auto fits in the grid.</p>
+      </article>
+
+      <article class="tile span-2-row">
+        <h3>Updates</h3>
+        <p>This one is taller, so grid auto-flow fills space around it.</p>
+      </article>
+
+      <article class="tile">
+        <img src="/public/images/Ai-bias1.webp" alt="Gallery" />
+      </article>
+
+      <article class="tile">
+        <h3>Todo</h3>
+        <ul>
+          <li>Finish design</li>
+          <li>Test layout</li>
+        </ul>
+      </article>
+
+      <article class="tile span-2">
+        <h3>Events</h3>
+        <p>Upcoming meetups and webinars.</p>
+      </article>
+
+      <article class="tile">
+        <p>Small card</p>
+      </article>
+    </section>
+
+
+  -->
+
+    <!--trial bento ends-->
+
+    
+    <!--scaled up bento grid starts here-->
+
+
+      <section class="bento-wrap">
+    <h2 class="title"></h2>
+
+    <div class="bento-grid">
+      <article class="tile"><img src="/public/images/gptBias.png" alt=""></article>
+      <article class="tile wide"><img src="/public/images/AI_bias_discrimination.jpg" alt=""></article>
+      <article class="tile"><img src="/public/images/AI-bias-chart.jpg" alt=""></article>
+      <article class="tile"><img src="/public/images/AI_piechart.webp" alt=""></article>
+      <article class="tile wide"><img src="/public/images/AI_Bias_piechart2.jpg" alt=""></article>
+      <article class="tile"><img src="/public/images/AI_bias_popularity.png" alt=""></article>
+    </div>
+  </section>
+
+    <!--scaled up bento grid ends here-->
+
+
+
+
+
+    <!--About section starts-->
+
+    <section class="about" id="about">
+
+      <h1 class="heading"><span>About</span> Us</h1>
+      <div class="row">
+        <div class="image">
+          <img src="/public/images/about-img.jpg" alt="" />
+        </div>
+        
+
+        <div class="content">
+          <h3>We insure there is no biasness in your model</h3>
+          <p>BiasGuard is designed as a general-purpose, domain-agnostic, and lightweight tool crafted to detect and analyse biases within trained Machine Learning models. Our Minimum Viable Product (MVP) specifically targets the critical Human Resources use-case, focusing on identifying gender bias in hiring processes.</p>
+          <p>Users can easily upload their trained ML models and corresponding datasets. BiasGuard processes the data to identify and quantify potential biases. The system generates comprehensive reports detailing fairness metrics and actionable suggestions.</p>
+          <a href=#footer class="btn">contact us</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!--About section ends-->
+
+
+
+    <!--Metrics section starts -->
+
+    <section class="Accuracy">
+      <h1 class="heading"><span>Metrics</span> We Use</h1>
+      <div class="row">
+        <div class="image"><img src="/public/images/Accuracy_metric.jpg" alt=""></div>
+    
+
+      <div class="content">
+        <h3>The metrics we use to check for biasness are: </h3>
+        <p><span>Accuracy</span> : is a performance metric used to evaluate classification models. It measures the proportion of correctly predicted observations out of all observations </p>
+        <p>If we use a confusion matrix (for binary classification):
+
+TP (True Positive): Model correctly predicts positive. <br>
+
+TN (True Negative): Model correctly predicts negative. <br>
+
+FP (False Positive): Model incorrectly predicts positive. <br>
+
+FN (False Negative): Model incorrectly predicts negative. <br>
+
+Accuracy = (TP + TN) ÷ (TP + TN + FP + FN)
+	​
+</p>
+
+      </div>
+      
+      </div>  
+    </section>
+
+
+    <section class="demographic">
+      <div class="row">
+        <div class="image"><img src="/public/images/demographic_metric.jpg" alt=""></div>
+
+        <div class="content">
+          <p><span>Demographic Parity Diff:</span> Demographic Parity is a fairness criterion used to check if a model’s predictions are independent of sensitive attributes (like gender, race, age, etc.).</p>
+          <p>If DPD = 0, then the model is fair (equal positive outcome rates). <br>
+
+              If DPD ≠ 0, there’s bias. <br>
+
+              Larger |DPD| means stronger disparity.</p>
+          <p>Demographic Parity Difference measures whether different groups (based on a sensitive attribute) receive favorable outcomes at similar rates, regardless of their actual ground truth. It’s a fairness metric that helps identify bias in ML predictions.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="equal">
+      <div class="row">
+        <div class="image"><img src="/public/images/equal_metric.jpg" alt=""></div>
+        <div class="content">
+          <p><span>Equality Oppurtunity Diff:</span> Equal Opportunity is a fairness criterion that checks if a model gives qualified individuals (true positives) the same chance of being correctly recognized across different groups (privileged vs unprivileged).It ensures that the True Positive Rate (TPR) (also called Recall or Sensitivity) is the same across groups.</p>
+          <p>Equal Opportunity Difference (EOD) measures whether different demographic groups with the same true qualifications get equal recognition by the model.</p>
+          <p>EOD = 0 → Equal treatment of groups (fair). <br>
+            EOD < 0 → Unprivileged group is disadvantaged. <br>
+            EOD > 0 → Privileged group is disadvantaged.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="disparate">
+      <div class="row">
+        <div class="image"><img src="/public/images/disparate_metricjpg.jpg" alt=""></div>
+        <div class="content">
+          <p><span>Disparate Impact:</span> Disparate Impact (DI) is a fairness metric used to check whether different demographic groups (e.g., gender, race, age) receive positive outcomes (like loan approval, hiring, admission) at similar rates.</p>
+          <p>It is often referred to as the “80% rule” in fairness and legal contexts.</p>
+          <p>Disparate Impact (DI) measures whether unprivileged groups receive positive predictions at at least 80% the rate of privileged groups. It is widely used in legal/ethical AI fairness assessments.</p>
+          <p>DI = 1 → Perfect fairness (both groups have equal positive outcome rates). <br>
+            DI < 1 → Unprivileged group receives fewer positive outcomes. <br>
+            DI > 1 → Unprivileged group receives more positive outcomes</p>
+            <p>Legal threshold (80% rule): <br>
+              If DI ≥ 0.8, it is usually considered fair (no disparate impact). <br>
+              If DI < 0.8, it indicates potential discrimination/bias.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!--Metrics section ends -->
+
+        <!--submit section begins-->
+
+
+    <section class="submit-section">
+  <div class="submit-box">
+    <h2>Ready to Submit Your Model?</h2>
+    <p>Once you’re happy with your uploaded model, click below to proceed.</p>
+    <button class="submit-btn" onclick="window.location.href='submit_model.html'">
+      🚀 Submit Model
+    </button>
+  </div>
+</section>
+
+
+    <!--submit section Ends-->
+
+
+
+   <!--Price section starts here-->
+
+    <section class="price" id="price">
+      <h1 class="heading">our <span>price</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <h3 class="title">Trial</h3>
+          <h3 class="amount">$0</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>free </li>
+            <li><i class="fas fa-check"></i>detects biasness</li>
+            <li><i class="fas fa-check"></i>no review</li>
+            <li><i class="fas fa-check"></i>no suggestions</li>
+            <li><i class="fas fa-check"></i>not programmable</li>
+          </ul>
+          <a href="payment.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">for 1 month</h3>
+          <h3 class="amount">$4.99</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i>gives personal review</li>
+            <li><i class="fas fa-check"></i>gives suggestions and feedbacks</li>
+            <li><i class="fas fa-check"></i>implements AI</li>
+            <li><i class="fas fa-check"></i>embedded chatbot</li>
+          </ul>
+          <a href="payment.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">for 3 months</h3>
+          <h3 class="amount">$19.99</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i>gives personal review</li>
+            <li><i class="fas fa-check"></i>gives suggestions and feedbacks</li>
+            <li><i class="fas fa-check"></i>implements AI</li>
+            <li><i class="fas fa-check"></i>embedded chatbot</li>
+          </ul>
+          <a href="payment.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">for 1 year</h3>
+          <h3 class="amount">$49.99</h3>
+          <ul>
+           <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i>gives personal review</li>
+            <li><i class="fas fa-check"></i>gives suggestions and feedbacks</li>
+            <li><i class="fas fa-check"></i>implements AI</li>
+            <li><i class="fas fa-check"></i>embedded chatbot</li>
+          </ul>
+          <a href="payment.html" class="btn">check out</a>
+        </div>
+      </div>
+    </section>
+
+    <!--Price section ends here-->
+
+
+
+
+    <!--review section starts here-->
+
+
+    
+   
+
+
+        <!--footer section starts -->
+
+    <section class="footer" id="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>branches</h3>
+          <a href="#"><i class="fas fa-map-marker-alt">Mumbai</i></a>
+          <a href="#"><i class="fas fa-map-marker-alt">Delhi</i></a>
+          <a href="#"><i class="fas fa-map-marker-alt">Indirapuram</i></a>
+          <a href="#"><i class="fas fa-map-marker-alt">Backlund</i></a>
+          <a href="#"><i class="fas fa-map-marker-alt">Andheri</i></a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#"><i class="fas fa-arrow-right">Home</i></a>
+          <a href="#"><i class="fas fa-arrow-right">service</i></a>
+          <a href="#"><i class="fas fa-arrow-right">about</i></a>
+          <a href="#"><i class="fas fa-arrow-right">gallery</i></a>
+          <a href="#"><i class="fas fa-arrow-right">price</i></a>
+          <a href="#"><i class="fas fa-arrow-right">review</i></a>
+          <a href="#"><i class="fas fa-arrow-right">contact</i></a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+          <a href="#"><i class="fas fa-phone"></i>+111-222-3334</a>
+          <a href="#"><i class="fas fa-envelope"></i>vernitrana05@gmail.com</a>
+          <a href="#"><i class="fas fa-envelope"></i>audreyhall05@gmail.com</a>
+          <a href="#"
+            ><i class="fa fa-map-marker-alt"></i>ghaziabad, india --- 201014</a
+          >
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"><i class="fab fa-facebook-f">facebook</i></a>
+          <a href="#"><i class="fab fa-twitter">twitter</i></a>
+          <a href="#"><i class="fab fa-instagram">instagram</i></a>
+          <a href="#"><i class="fab fa-linkedin">linkedin</i></a>
+        </div>
+      </div>
+    </section>
+
+    <!--footer section ends-->
+
+
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/public/script.js"></script>
+  </body>
+</html>

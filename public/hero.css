@@ -1,0 +1,81 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: #fff;
+  background: radial-gradient(1200px 800px at 20% 20%, #0d1b2a, #0b1020 60%, #070b14 100%);
+  overflow: hidden;
+}
+
+/* Canvas */
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Hero Section */
+.landing {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 24px;
+}
+
+.content h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.4px;
+  animation: fadeInDown 800ms ease-out both;
+  text-shadow: 0 6px 30px rgba(0,0,0,.35);
+}
+.content h1 span {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  color: #ffd166;
+  margin-top: .5rem;
+}
+.content p {
+  margin-top: 16px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  opacity: .9;
+  max-width: 720px;
+  animation: fadeInUp 900ms ease-out 120ms both;
+  text-shadow: 0 4px 20px rgba(0,0,0,.35);
+}
+
+/* CTA Button */
+.cta-btn {
+  margin-top: 28px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 12px 35px rgba(118,75,162,0.35);
+  transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
+  animation: popIn 950ms cubic-bezier(.2,.9,.3,1.2) 140ms both;
+}
+.cta-btn:hover {
+  transform: translateY(-1px) scale(1.04);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 45px rgba(118,75,162,0.45);
+}
+.cta-btn:active {
+  transform: translateY(0) scale(.98);
+}
+
+/* Animations */
+@keyframes fadeInDown { from { opacity:0; transform: translateY(-26px) } to { opacity:1; transform: translateY(0) } }
+@keyframes fadeInUp   { from { opacity:0; transform: translateY(26px) }  to { opacity:1; transform: translateY(0) } }
+@keyframes popIn      { 0% { opacity:0; transform: scale(.8) } 70% { opacity:1; transform: scale(1.04) } 100% { transform: scale(1) } }

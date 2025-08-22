@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Processing</title>
+    <link rel="stylesheet" href="/public/styles2.css" />
+  </head>
+  <body>
+    <div class="payment-container">
+      <h2>Payment Details</h2>
+
+      <form class="payment-form" id="paymentForm">
+        <div class="form-group">
+          <label for="cardName">Cardholder Name</label>
+          <input type="text" id="cardName" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input
+            type="text"
+            id="cardNumber"
+            maxlength="16"
+            placeholder="1234 5678 9012 3456"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiry">Expiry Date</label>
+            <input
+              type="text"
+              id="expiry"
+              maxlength="5"
+              placeholder="MM/YY"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input
+              type="password"
+              id="cvv"
+              maxlength="3"
+              placeholder="123"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="100.00" required />
+        </div>
+
+        <button type="submit" class="pay-btn">Pay Now</button>
+      </form>
+    </div>
+
+    <!-- Processing Overlay -->
+    <div class="overlay" id="overlay">
+      <div class="spinner"></div>
+      <p>Processing Payment...</p>
+    </div>
+
+    <script src="/public/script2.js"></script>
+  </body>
+</html>

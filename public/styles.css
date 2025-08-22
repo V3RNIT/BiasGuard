@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap');
+
+:root{
+    --main-color:#3867d6;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #222;
+}
+
+
+section{
+    padding: 2rem 9%;
+}
+
+
+
+.about .top1 .top2{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.about .top1 .top2 h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+
+.hero{
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+
+
+.grid-container{
+    position: relative;
+    display: grid;
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.12);
+    grid-template-columns: 200px 200px 200px 200px ;    
+    grid-template-rows: 200px 200px 200px;
+    gap: 2em;
+    grid-template-areas: 
+    "box-1 box-1 box-2 box-3"
+    "box-1 box-1 box-2 box-5"
+    "box-6 box-4 box-4 box-5";
+}
+
+.grid-container .box{
+    display: flex;
+    object-fit: cover;
+    background-color: var(--main-color);
+    overflow: hidden;
+    
+}
+
+
+.grid-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 1s;
+}
+
+.grid-container .box:hover img{
+    scale: 1.2;
+}
+
+.grid-container .imgtext #box-1{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    background-color: #222;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.grid-container #box-6{
+    background-color: rgb(128, 192, 249);
+    display: flex;
+    object-fit: contain;
+}
+
+.grid-container #box-6:hover{
+    background-color: bisque;
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.grid-container #box-4{
+    background-color: rgb(128, 192, 249);
+    display: flex;
+    object-fit: cover;
+}
+
+
+.grid-container #box-4:hover{
+    background-color: bisque;
+}
+
+
+
+
+
+
+
+.container {
+  max-width:1200px;
+  margin:32px auto;
+  padding:0 20px;
+}
+
+.visually-hidden {  
+  position:absolute !important;
+  height:1px; width:1px;
+  overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+/* Auto-placement grid */
+.bento {
+  justify-content: center; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 14px;
+  grid-auto-flow: dense; /* This packs items tightly */
+}
+
+.tile {
+  background:var(--main-color);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  overflow:hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.tile:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+.tile img {
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  object-fit:cover;
+   height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 1s;
+}
+
+.tile img:hover{
+    scale: 1.2;
+}
+
+/* Size modifiers */
+.span-2 { grid-column: span 2; }
+.span-2-row { grid-row: span 2; }
+
+@media (max-width:600px) {
+  .bento { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); grid-auto-rows: 120px; }
+}
+
+
+
+
+
+
+
+/* scaled up bento css starts here */
+
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Bento Items */
+.bento-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Hover Interactivity */
+.bento-item:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Shape Modifiers */
+.wide {
+  grid-column: span 2;
+}
+.tall {
+  grid-row: span 2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* scaled up bento css ends here */
+
+
+
+
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    background: #666;
+    color: #333;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background: var(--main-color);
+}
+
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10000;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
+}
+
+.header .logo{
+    font-weight: bolder;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.header .logo span{
+    color:var(--main-color);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: #fff;
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+}
+
+#menu-bars{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+/* Metric section starts here */
+
+.Accuracy .heading{
+  .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+}
+
+
+
+.Accuracy .content{
+    flex:1 1 45rem;
+}
+
+.Accuracy .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.Accuracy .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.Accuracy .content span{
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+
+.Accuracy .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.Accuracy .row .image{
+    flex:1 1 45rem;
+    padding: 1rem;
+}
+
+.Accuracy .row .image img{
+    width: 100%;
+    border-radius: .5rem;
+    border: 1rem solid #333;
+}
+
+.Accuracy .row .content{
+    flex:1 1 45rem;
+}
+
+.Accuracy .row .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.Accuracy .row .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+
+
+/* demographic Parity start  */
+
+.demographic .heading{
+  .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+}
+
+
+
+.demographic .content{
+    flex:1 1 45rem;
+}
+
+.demographic .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.demographic .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.demographic .content span{
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+
+.demographic .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.demographic .row .image{
+    flex:1 1 45rem;
+    padding: 1rem;
+}
+
+.demographic .row .image img{
+    width: 100%;
+    border-radius: .5rem;
+    border: 1rem solid #333;
+}
+
+.demographic .row .content{
+    flex:1 1 45rem;
+}
+
+.demographic .row .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.demographic .row .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+/* demographic Parity end */
+
+
+/* equal opurtunity starts here */
+
+.equal .heading{
+  .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+}
+
+
+
+.equal .content{
+    flex:1 1 45rem;
+}
+
+.equal .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.equal .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.equal .content span{
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+
+.equal .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.equal .row .image{
+    flex:1 1 45rem;
+    padding: 1rem;
+}
+
+.equal .row .image img{
+    width: 100%;
+    border-radius: .5rem;
+    border: 1rem solid #333;
+}
+
+.equal .row .content{
+    flex:1 1 45rem;
+}
+
+.equal .row .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.equal .row .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/* equal opurtunity Ends here */
+
+
+
+
+/* disparate impact starts here */
+
+.disparate .heading{
+  .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+}
+
+
+
+.disparate .content{
+    flex:1 1 45rem;
+}
+
+.disparate .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.disparate .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.disparate .content span{
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+
+.disparate .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.disparate .row .image{
+    flex:1 1 45rem;
+    padding: 1rem;
+}
+
+.disparate .row .image img{
+    width: 100%;
+    border-radius: .5rem;
+    border: 1rem solid #333;
+}
+
+.disparate .row .content{
+    flex:1 1 45rem;
+}
+
+.disparate .row .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.disparate .row .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+/* disparate impact ends here */
+
+
+/* Metric section ends here */
+
+
+
+/* Submit Section */
+.submit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, --main-color, #764ba2);
+}
+
+.submit-box {
+  background: #fff;
+  color: #333;
+  text-align: center;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.submit-box h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #222;
+}
+
+.submit-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: scale(1.05);
+}
+
+
+
+
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+    padding: 1rem;
+}
+
+.about .row .image img{
+    width: 100%;
+    border-radius: .5rem;
+    border: 1rem solid #333;
+}
+
+.about .row .content{
+    flex:1 1 45rem;
+}
+
+.about .row .content h3{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+
+
+
+
+
+
+.price .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.price .box-container .box{
+    padding: 2rem 0;
+    background: #333;
+    border-radius: 0.5 rem;
+    text-align: center;
+}
+
+.price .box-container .box:hover{
+    transform: scale(1.03);
+}
+
+.price .box-container .box .title{
+    background: var(--main-color);
+    color: #fff;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+}
+
+.price .box-container .box .amount{
+    background: var(--main-color);
+    color: #fff;
+    padding-top: 2rem;
+    font-size: 4rem;
+}
+
+
+.price .box-container .box ul{
+    list-style-type: none;
+    padding: 1rem 0;
+
+}
+
+.price .box-container .box ul li{
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    
+}
+
+.price .box-container .box ul li i{
+    color: var(--main-color);
+    padding-right: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer css starts here */
+
+.footer{
+    background: #111;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
+}
+
+
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color: var(--main-color);
+}
+
+
+.footer .box-container .box a:hover i{
+     padding-right: 1.5rem;
+    color: #fff;
+}
+
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid #222;
+    color: #fff;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.footer .credit span{
+    color: var(--main-color);
+}
+
+/* footer css ends here */
+
+
+
+
